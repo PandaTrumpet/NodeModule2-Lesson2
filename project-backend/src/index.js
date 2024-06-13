@@ -1,3 +1,2 @@
-import startServer from "./server.js";
-
+import startServer from './server.js';
 startServer();
