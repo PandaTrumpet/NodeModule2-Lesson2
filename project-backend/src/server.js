@@ -68,24 +68,19 @@ const startServer = () => {
       target: 'pino-pretty',
     },
   });
-
-  app.use(logger); //для виводу інформа в термінал
   app.use(cors());
-<<<<<<< Updated upstream
-=======
-
+  app.use(logger);
   app.get('/api/movies', (req, res) => {
     res.json(movies);
   });
   app.use((req, res) => {
     res.status(404).json({
-      message: 'Not Found',
+      message: 'Not found',
     });
   });
-  app.listen(3001, () => {
-    console.log('Server is runig 3001');
+  app.listen(3000, () => {
+    console.log('Server is runnig 3000');
   });
->>>>>>> Stashed changes
 };
 
 export default startServer;
