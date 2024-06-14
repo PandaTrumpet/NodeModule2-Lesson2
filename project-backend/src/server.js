@@ -35,23 +35,33 @@
 
 // export default startServer;
 
+// import express from 'express';
+// import cors from 'cors';
+// import movies from './db/movies.js';
+// const startServer = () => {
+//   const app = express();
+//   app.use(cors());
+
+//   app.get('/api/movies', (req, res) => {
+//     res.json(movies);
+//   });
+//   app.get((req, res) => {
+//     res.status(404).json({
+//       message: 'Not Found',
+//     });
+//   });
+//   app.listen(3000, () => {
+//     console.log('Server is runig 3000');
+//   });
+// };
+// export default startServer;
+
 import express from 'express';
 import cors from 'cors';
 import movies from './db/movies.js';
 const startServer = () => {
   const app = express();
   app.use(cors());
-
-  app.get('/api/movies', (req, res) => {
-    res.json(movies);
-  });
-  app.get((req, res) => {
-    res.status(404).json({
-      message: 'Not Found',
-    });
-  });
-  app.listen(3000, () => {
-    console.log('Server is runig 3000');
-  });
 };
+
 export default startServer;
