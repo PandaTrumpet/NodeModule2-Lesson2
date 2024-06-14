@@ -59,9 +59,33 @@
 import express from 'express';
 import cors from 'cors';
 import movies from './db/movies.js';
+import pino from 'pino-http';
+
 const startServer = () => {
   const app = express();
+  const logger = pino({
+    transport: {
+      target: 'pino-pretty',
+    },
+  });
+
+  app.use(logger); //для виводу інформа в термінал
   app.use(cors());
+<<<<<<< Updated upstream
+=======
+
+  app.get('/api/movies', (req, res) => {
+    res.json(movies);
+  });
+  app.use((req, res) => {
+    res.status(404).json({
+      message: 'Not Found',
+    });
+  });
+  app.listen(3001, () => {
+    console.log('Server is runig 3001');
+  });
+>>>>>>> Stashed changes
 };
 
 export default startServer;
